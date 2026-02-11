@@ -2,15 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LIGO Creativa — Lindsay González</title>
-  <meta name="description" content="Portafolio de Lindsay González (LIGO Creativa). Branding, diseño editorial, material publicitario y diseño gráfico aplicado para marcas y empresas." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     :root {
-      --negro: #111;
-      --gris: #666;
-      --gris-claro: #f5f5f5;
-      --rojo: #e1062c;
+      --black: #111;
+      --gray: #666;
+      --light: #f6f6f6;
+      --accent: #e6003c;
     }
 
     * {
@@ -20,15 +20,10 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--negro);
-      background: white;
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: var(--black);
+      line-height: 1.6;
     }
 
     img {
@@ -36,323 +31,438 @@
       display: block;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    h1 {
-      font-size: clamp(40px, 6vw, 64px);
-      font-weight: 700;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      color: var(--gris);
-      max-width: 760px;
-      margin-bottom: 16px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 14px 28px;
-      border-radius: 999px;
-      background: var(--negro);
-      color: white;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background: var(--rojo);
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
+    /* HEADER */
+    header {
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      background: white;
+      z-index: 100;
+      background: #fff;
       border-bottom: 1px solid #eee;
-      z-index: 1000;
     }
 
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 24px;
+    .header-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
-    .nav-logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
+    .logo {
+      height: 42px;
     }
 
-    .nav-links a {
+    nav a {
       margin-left: 24px;
       font-size: 14px;
-      color: var(--gris);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--gray);
     }
 
-    .nav-links a:hover {
-      color: var(--negro);
+    nav a:hover {
+      color: var(--accent);
     }
 
     /* HERO */
     .hero {
-      padding-top: 160px;
-      padding-bottom: 120px;
+      background: var(--light);
+      padding: 120px 20px 100px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: -.02em;
     }
 
     .hero p {
       font-size: 18px;
+      max-width: 680px;
+      margin: auto;
+      color: var(--gray);
     }
 
-    /* SECTIONS */
+    /* SECTION BASE */
     section {
-      border-top: 1px solid #eee;
+      padding: 100px 20px;
     }
 
-    /* SERVICES */
-    .services-grid {
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      max-width: 680px;
+      color: var(--gray);
+      margin-bottom: 48px;
+      font-size: 16px;
+    }
+
+    /* SLIDER */
+    .slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+
+    .slider::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .slider::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 260px;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      scroll-snap-align: start;
+      transition: transform .3s ease;
+    }
+
+    .slide:hover {
+      transform: translateY(-6px);
+    }
+
+    .slide img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    /* TEXT BLOCKS */
+    .text-block {
+      max-width: 760px;
+      margin-bottom: 48px;
+      color: var(--gray);
+      font-size: 16px;
+    }
+
+    .text-block strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    /* METHODOLOGY GRID */
+    .method-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 32px;
+      margin-top: 40px;
+    }
+
+    .method-card {
+      background: var(--light);
+      padding: 32px;
+      border-radius: 16px;
+    }
+
+    .method-card h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .method-card p {
+      font-size: 15px;
+      color: var(--gray);
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
       margin-top: 48px;
     }
 
     .service-card {
-      padding: 32px;
-      background: var(--gris-claro);
-      border-radius: 24px;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 28px;
+      background: #fff;
     }
 
-    .service-card h3 {
-      margin-bottom: 12px;
-    }
-
-    /* PORTFOLIO */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
-    }
-
-    .project {
-      background: #fafafa;
-      border-radius: 24px;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-    }
-
-    .project-info {
-      padding: 24px;
-    }
-
-    .project-info h3 {
-      margin-bottom: 6px;
-    }
-
-    .project-info p {
-      font-size: 14px;
-      color: var(--gris);
-    }
-
-    /* ABOUT */
-    .about p {
+    .service-card h4 {
+      margin-bottom: 10px;
       font-size: 17px;
     }
 
-    /* CONTACT */
-    .contact {
-      background: var(--negro);
-      color: white;
+    .service-card p {
+      font-size: 14px;
+      color: var(--gray);
     }
 
-    .contact p {
-      color: #ccc;
+    /* ABOUT */
+    .about-container {
+      max-width: 760px;
     }
 
-    .contact a {
-      display: block;
-      margin-top: 12px;
-      font-size: 18px;
+    .about-container p {
+      margin-bottom: 16px;
+      color: var(--gray);
+      font-size: 16px;
     }
 
+    /* FOOTER */
     footer {
-      padding: 32px 24px;
+      background: #111;
+      color: #fff;
+      padding: 80px 20px 60px;
       text-align: center;
-      font-size: 12px;
-      color: var(--gris);
-      border-top: 1px solid #eee;
     }
 
-    @media (max-width: 640px) {
-      .nav-links {
-        display: none;
+    footer img {
+      height: 44px;
+      margin-bottom: 24px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav a {
+        margin-left: 14px;
+        font-size: 12px;
+      }
+
+      .slide {
+        width: 220px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-logo">LIGO</div>
-      <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#sobre">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-      </div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <img src="images/logo-ligo.png" alt="LIGO Creativa" class="logo" />
+      <nav>
+        <a href="#branding">Branding</a>
+        <a href="#editorial">Editorial</a>
+        <a href="#digital">Diseño digital</a>
+        <a href="#campaigns">Campañas</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#contact">Contacto</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="container">
-      <h1>LIGO Creativa</h1>
-      <p>Branding, diseño editorial y diseño gráfico aplicado para marcas y empresas.</p>
-      <p>Diseñadora gráfica senior enfocada en construir identidades, piezas y sistemas visuales claros, funcionales y estratégicos, alineados a objetivos reales de negocio.</p>
-      <a href="#contacto" class="btn">Trabajemos juntos</a>
-    </div>
+  <section class="hero">
+    <h1>LIGO Creativa</h1>
+    <p>
+      Soy Lindsay González, diseñadora gráfica senior. Desarrollo branding, diseño editorial y
+      diseño gráfico aplicado para marcas y empresas, construyendo soluciones visuales funcionales,
+      memorables y alineadas con objetivos reales de comunicación y negocio.
+    </p>
   </section>
 
-  <!-- SERVICES -->
-  <section id="servicios">
-    <div class="container">
-      <h2>Servicios</h2>
-      <p>Soluciones de diseño desarrolladas desde el análisis, el concepto y la claridad visual.</p>
+  <!-- BRANDING -->
+  <section id="branding">
+    <div class="section-container">
+      <h2 class="section-title">Branding & Identidad Visual</h2>
+      <p class="section-subtitle">
+        Desarrollo de marcas sólidas a partir de análisis estratégico, concepto y coherencia visual,
+        construyendo sistemas gráficos claros, funcionales y memorables.
+      </p>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Branding e identidad visual</h3>
-          <p>Creación de marcas sólidas, coherentes y memorables. El proceso inicia con un formulario estratégico de marca que permite comprender el negocio, el público y los objetivos antes de diseñar.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Diseño editorial y catálogos</h3>
-          <p>Diseño de revistas, catálogos y piezas editoriales a partir de textos definidos y fotografías suministradas por el cliente o proveedor, garantizando claridad, jerarquía visual y coherencia de marca.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Diseño para redes sociales</h3>
-          <p>Diseño de piezas gráficas estáticas para redes sociales a partir de fotografías y textos entregados por el cliente, manteniendo consistencia visual y claridad comunicativa.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Material publicitario y campañas</h3>
-          <p>Diseño de piezas gráficas para activaciones comerciales, puntos de venta y campañas impresas o mixtas, desarrolladas a partir de objetivos claros y lineamientos estratégicos.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Diseño gráfico para plataformas digitales</h3>
-          <p>Diseño de piezas visuales para entornos digitales como presentaciones, plataformas corporativas y comunicación interna, manteniendo coherencia visual y funcionalidad.</p>
-        </div>
+      <div class="slider">
+        <div class="slide"><img src="images/branding/branding-1.jpg" alt=""></div>
+        <div class="slide"><img src="images/branding/branding-2.jpg" alt=""></div>
+        <div class="slide"><img src="images/branding/branding-3.jpg" alt=""></div>
+        <div class="slide"><img src="images/branding/branding-4.jpg" alt=""></div>
+        <div class="slide"><img src="images/branding/branding-5.jpg" alt=""></div>
+        <!-- Puedes duplicar estas líneas para agregar más -->
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portafolio">
-    <div class="container">
-      <h2>Portafolio</h2>
-      <p>Selección de proyectos desarrollados para marcas y empresas en diferentes sectores.</p>
+  <!-- EDITORIAL -->
+  <section id="editorial" style="background:#f6f6f6;">
+    <div class="section-container">
+      <h2 class="section-title">Diseño editorial & Catálogos</h2>
+      <p class="section-subtitle">
+        Diseño de publicaciones impresas y digitales con enfoque en estructura, legibilidad,
+        jerarquía visual y claridad de contenido.
+      </p>
 
-      <div class="portfolio-grid">
-        <div class="project">
-          <img src="https://via.placeholder.com/600x400?text=AGILEZ" alt="Proyecto AGILEZ">
-          <div class="project-info">
-            <h3>AGILEZ</h3>
-            <p>Branding · Inmobiliario</p>
-          </div>
+      <div class="slider">
+        <div class="slide"><img src="images/editorial/editorial-1.jpg" alt=""></div>
+        <div class="slide"><img src="images/editorial/editorial-2.jpg" alt=""></div>
+        <div class="slide"><img src="images/editorial/editorial-3.jpg" alt=""></div>
+        <div class="slide"><img src="images/editorial/editorial-4.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL -->
+  <section id="digital">
+    <div class="section-container">
+      <h2 class="section-title">Diseño digital & Redes sociales</h2>
+      <p class="section-subtitle">
+        Diseño gráfico para redes sociales y plataformas digitales, enfocado en coherencia visual,
+        claridad de mensaje y adaptación a diferentes formatos y objetivos de comunicación.
+      </p>
+
+      <div class="slider">
+        <div class="slide"><img src="images/digital/digital-1.jpg" alt=""></div>
+        <div class="slide"><img src="images/digital/digital-2.jpg" alt=""></div>
+        <div class="slide"><img src="images/digital/digital-3.jpg" alt=""></div>
+        <div class="slide"><img src="images/digital/digital-4.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGNS -->
+  <section id="campaigns" style="background:#f6f6f6;">
+    <div class="section-container">
+      <h2 class="section-title">Material publicitario & Campañas</h2>
+      <p class="section-subtitle">
+        Desarrollo de sistemas gráficos para campañas comerciales y piezas publicitarias aplicadas
+        a medios impresos, puntos de venta y espacios físicos.
+      </p>
+
+      <div class="slider">
+        <div class="slide"><img src="images/campaigns/campaigns-1.jpg" alt=""></div>
+        <div class="slide"><img src="images/campaigns/campaigns-2.jpg" alt=""></div>
+        <div class="slide"><img src="images/campaigns/campaigns-3.jpg" alt=""></div>
+        <div class="slide"><img src="images/campaigns/campaigns-4.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="methodology">
+    <div class="section-container">
+      <h2 class="section-title">Metodología de trabajo</h2>
+      <p class="section-subtitle">
+        Cada servicio se desarrolla bajo un proceso claro que garantiza coherencia visual,
+        funcionalidad gráfica y soluciones alineadas a objetivos reales de comunicación.
+      </p>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <h4>Branding & Identidad visual</h4>
+          <p>
+            Recolección de información mediante formulario estratégico, análisis de marca,
+            conceptualización y desarrollo del sistema visual completo listo para aplicación.
+          </p>
         </div>
 
-        <div class="project">
-          <img src="https://via.placeholder.com/600x400?text=BREYCAM" alt="Proyecto BREYCAM">
-          <div class="project-info">
-            <h3>BREYCAM Logística</h3>
-            <p>Identidad visual · Logística</p>
-          </div>
+        <div class="method-card">
+          <h4>Diseño editorial & Catálogos</h4>
+          <p>
+            Recepción de textos finales y fotografías del cliente o proveedor, estructuración de
+            contenido, diseño editorial y entrega de archivos listos para impresión o publicación digital.
+          </p>
         </div>
 
-        <div class="project">
-          <img src="https://via.placeholder.com/600x400?text=CONCAVA" alt="Proyecto CÓNcava">
-          <div class="project-info">
-            <h3>CÓNcava</h3>
-            <p>Branding · Ingeniería y construcción</p>
-          </div>
+        <div class="method-card">
+          <h4>Diseño para redes sociales</h4>
+          <p>
+            Diseño de piezas gráficas estáticas a partir de fotografías y textos entregados por el cliente.
+            En caso de requerir generación de imágenes o concepto visual, se cotiza como servicio adicional.
+          </p>
         </div>
 
-        <div class="project">
-          <img src="https://via.placeholder.com/600x400?text=SATORI" alt="Proyecto Satori">
-          <div class="project-info">
-            <h3>Satori</h3>
-            <p>Branding · Vivienda campestre</p>
-          </div>
+        <div class="method-card">
+          <h4>Material publicitario & Campañas</h4>
+          <p>
+            Desarrollo visual a partir de briefing comercial, objetivos de campaña y piezas requeridas,
+            construyendo sistemas gráficos coherentes y funcionales para diferentes formatos.
+          </p>
         </div>
 
-        <div class="project">
-          <img src="https://via.placeholder.com/600x400?text=ENDONEXA" alt="Proyecto Endonexa">
-          <div class="project-info">
-            <h3>Endonexa</h3>
-            <p>Branding · Tecnología médica</p>
-          </div>
+        <div class="method-card">
+          <h4>Diseño gráfico para plataformas digitales</h4>
+          <p>
+            Diseño de piezas para entornos digitales comerciales y corporativos, adaptadas a formatos,
+            plataformas y objetivos de comunicación específicos.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <h4>Edición básica de video</h4>
+          <p>
+            Edición de material audiovisual entregado por el cliente, integración de textos, subtítulos
+            y ajustes visuales básicos para uso digital.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="sobre" class="about">
-    <div class="container">
-      <h2>Sobre LIGO Creativa</h2>
-      <p>Soy Lindsay González (LIGO Creativa), diseñadora gráfica senior egresada del Instituto Departamental de Bellas Artes de Cali, con más de 12 años de experiencia en branding, diseño editorial y diseño gráfico aplicado para marcas y empresas.</p>
-
-      <p>Trabajo a partir del análisis y la información que cada cliente brinda para construir conceptos claros y soluciones visuales funcionales, memorables y estratégicas, enfocadas en resolver necesidades reales de comunicación, posicionamiento y negocio, tanto en medios impresos como digitales.</p>
+  <section id="about" style="background:#f6f6f6;">
+    <div class="section-container about-container">
+      <h2 class="section-title">Sobre LIGO Creativa</h2>
+      <p>
+        Soy Lindsay González (LIGO Creativa), diseñadora gráfica senior egresada del Instituto
+        Departamental de Bellas Artes de Cali, con más de 12 años de experiencia en branding,
+        diseño editorial y diseño gráfico aplicado para marcas y empresas.
+      </p>
+      <p>
+        Trabajo a partir del análisis y la información que cada cliente brinda para construir conceptos
+        claros y soluciones visuales funcionales, memorables y estratégicas, enfocadas en resolver
+        necesidades reales de comunicación, posicionamiento y negocio, tanto en medios impresos
+        como digitales.
+      </p>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contacto" class="contact">
-    <div class="container">
-      <h2>Contacto</h2>
-      <p>Diseño estratégico, claridad visual y soluciones que funcionan en contextos reales de marca.</p>
-
+  <footer id="contact">
+    <img src="images/logo-ligo-white.png" alt="LIGO Creativa" />
+    <p>Lindsay González · Diseñadora gráfica senior</p>
+    <p>
       <a href="mailto:ligocreativa@gmail.com">ligocreativa@gmail.com</a>
-      <a href="https://instagram.com/ligocreativa" target="_blank">Instagram · @ligocreativa</a>
-      <a href="https://forms.gle/" target="_blank">Formulario para proyectos de marca</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 LIGO Creativa — Lindsay González
+    </p>
+    <p>
+      Instagram · <a href="https://instagram.com/ligocreativa" target="_blank">@ligocreativa</a>
+    </p>
   </footer>
 
 </body>
 </html>
+
+
